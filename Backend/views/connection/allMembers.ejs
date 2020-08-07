@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>All Members</title>
+  </head>
+  <body>
+    <center>
+      <h2>All Members</h2>
+      <br /><br />
+      <div>
+        <% members.forEach(member => {%>
+        <div>
+          <br /><br />
+          <strong> <%= member.info.type %> </strong> &nbsp;&nbsp; <%= member.info.firstName %> &nbsp;&nbsp;
+          <%=member.info.lastName %> &nbsp;&nbsp;
+          <a href="/profile?id=<%=member.id%>">View Profile</a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a class="portfolio" href="/portfolio?id=<%=member.id%>">View Portfolio</a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="/message/chat?id=<%=member.id%>&mID=<%=mID%>">Message</a>
+          <input class="type" type="hidden" , value="<%= member.info.type %>" />
+        </div>
+        <% })%>
+
+        <script>
+          const type = document.getElementsByClassName("type");
+          const portfolio = document.getElementsByClassName("portfolio");
+          console.log(type.length);
+          for (let i = 0; i < type.length; i++) {
+            if (type[i].value == "Employer") portfolio[i].style.display = "none";
+          }
+        </script>
+      </div>
+      <br /><br /><br />
+      <a href="/">Back to Dashboard!</a>
+    </center>
+  </body>
+</html>

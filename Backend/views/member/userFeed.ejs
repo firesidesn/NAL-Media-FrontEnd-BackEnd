@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NAL Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <center>
+      <h3>User Feed</h3>
+      <br />
+      <div>
+        <% jobs.forEach(record => {%>
+        <div>
+          <%= record.Name %> Posted a new Job: &nbsp;
+          <a href="/creative/viewJob?id=<%=record.jobID%>"> <%=record.title%>. </a>
+          <br /><br />
+        </div>
+        <% })%>
+      </div>
+      <div>
+        <% portfolios.forEach(record => {%>
+        <div>
+          <%= record.firstName %> <%= record.lastName %> added a new
+          <a href="/portfolio?id=<%=record.userID%>"> Portfolio. </a>
+          <br /><br />
+        </div>
+        <% })%>
+      </div>
+
+      <div>
+        <% mutualConnection.forEach(record => {%>
+        <div>
+          <%= record.friend %> added a new connection:
+          <a href="/profile?id=<%=record.mutualFriendID%>"> <%= record.mutualFriend %>. </a>
+          <br /><br />
+        </div>
+        <% })%>
+      </div>
+
+      <br /><br /><a href="/">Back to Dashboard</a>
+    </center>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Connection</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <center>
+      <h1>Manage Connections</h1>
+      <br />
+      <h3><u>Sent Requests:</u></h3>
+      <div>
+        <% sentReq.forEach(member => {%>
+        <div>
+          <br />
+          <strong><%= member.info.type %></strong>&nbsp;&nbsp;<%= member.info.firstName %> &nbsp;&nbsp;<%=
+          member.info.lastName %>
+        </div>
+        <% })%>
+      </div>
+      <br />
+      <hr />
+      <br />
+      <h3><u>Your Connections:</u></h3>
+      <div>
+        <% acceptedConnection.forEach(member => {%>
+        <div>
+          <br />
+          <strong><%= member.info.type %></strong>&nbsp;&nbsp;<%= member.info.firstName %> &nbsp;&nbsp;<%=
+          member.info.lastName %>&nbsp;&nbsp;
+          <a href="/connection/remove?id=<%=member.id%>">Remove</a>
+        </div>
+        <% })%>
+      </div>
+      <br />
+      <hr />
+      <br />
+      <h3><u>New Connection Requests:</u></h3>
+      <div>
+        <% newReq.forEach(member => {%>
+        <div>
+          <br />
+          <strong><%= member.info.type %></strong>&nbsp;&nbsp;<%= member.info.firstName %> &nbsp;&nbsp;<%=
+          member.info.lastName %>&nbsp;&nbsp;
+          <a href="/connection/accept?id=<%=member.id%>">Accept</a>
+          &nbsp;&nbsp;
+          <a href="/connection/remove?id=<%=member.id%>">Ignore</a>
+        </div>
+        <% })%>
+      </div>
+      <br /><br />
+      <a href="/">Back to Dashboard!</a>
+    </center>
+  </body>
+</html>

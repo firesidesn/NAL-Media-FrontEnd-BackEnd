@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Member</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <center>
+      <h3>Edit Member</h3>
+      <br />
+      <div>
+        <form action="/admin/manageMember" method="POST">
+          <strong>Name:</strong><br />
+          <%= profile.firstName %>&nbsp; <%= profile.lastName %><br /><br />
+          <strong>Email:</strong><br />
+          <%= profile.email %><br /><br />
+          <strong>Type:</strong><br />
+          <%= profile.type %><br /><br />
+          <strong>Status:</strong><br />
+          <%= profile.status %><br /><br />
+          <input type="radio" id="active" name="status" value="active" />
+          <label for="active">Approve</label>&nbsp;&nbsp;
+          <input type="radio" id="suspended" name="status" value="suspended" />
+          <label for="suspended">Suspend</label>&nbsp;&nbsp;
+          <input type="radio" id="featured" name="status" value="featured" />
+          <label for="featured">Feature</label>
+          <br /><br />
+          <input type="hidden" name="id" value="<%=id%>" />
+          <input type="submit" value="Update" />
+        </form>
+      </div>
+      <br /><br />
+      <a href="/">Back to Dashboard</a><br /><br />
+    </center>
+  </body>
+</html>

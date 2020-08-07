@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NAL Media</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <center>
+      <div class="container">
+        <h2>Welcome To NAL Media</h2>
+        <h2>Log in!</h2>
+        <br />
+        <h4><%=message%></h4>
+        <br />
+        <div class="form-group">
+          <form action="/login" method="POST">
+            <div><input type="email" name="email" placeholder="Email" /></div>
+            <br />
+            <div><input type="password" name="password" placeholder="Password" /></div>
+            <br />
+            <div><input type="submit" value="Log In!" /></div>
+          </form>
+        </div>
+        New User? <a href="/signup">Sign up!</a>
+      </div>
+    </center>
+  </body>
+</html>

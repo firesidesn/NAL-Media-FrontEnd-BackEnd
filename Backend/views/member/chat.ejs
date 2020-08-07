@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+      integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+      crossorigin="anonymous"
+    />
+    <title>Nal Media Chat</title>
+    <style>
+      #messages {
+        height: 400px;
+        overflow-y: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3 col-sm-12">
+          <h1 class="text-center">
+            Nal Media Chat
+          </h1>
+          <div id="chat">
+            <div class="card">
+              <div id="messages" class="card-block">
+                <% checkDB.forEach(data => {%>
+                <div class="chat-message">
+                  <%=data.info.mID%> : <%=data.info.message%>
+                </div>
+                <% })%>
+              </div>
+            </div>
+            <br />
+            <input type="text" id="getData" style="display: none;" value="<%=checkDB%>" />
+            <input type="text" id="getCID" style="display: none;" value="<%=cID%>" />
+            <input type="text" id="getName" style="display: none;" value="<%=userName%>" />
+            <input type="text" id="from" style="display: none;" value="<%=from%>" />
+            <input type="text" id="to" style="display: none;" value="<%=to%>" />
+            <textarea
+              id="textarea"
+              class="form-control"
+              placeholder="Enter message...[Shift Enter for Line Break]"
+            ></textarea>
+            <div id="status"></div>
+            <br /><br /><br /><a href="/">Back to Dashboard</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/chat_script.js"></script>
+  </body>
+</html>

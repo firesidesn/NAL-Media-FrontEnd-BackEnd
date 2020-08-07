@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creative Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <center>
+      <div>
+        <input type="text" id="message" style="display: none;" value="<%=message%>" />
+        <strong>Title:</strong><br />
+        <%= job.title %><br /><br />
+        <strong>Description:</strong><br />
+        <%= job.description %><br /><br />
+        <strong>Required Qualification:</strong><br />
+        <%= job.qualification %><br /><br />
+        <strong>Link to Apply:</strong><br />
+        <%= job.link %>
+        <br /><br /><%=message%> <br /><br />
+        <div id="applied"><a href="/creative/applied?id=<%=jobID%>&title=<%=job.title%>">Applied?</a></div>
+        <br /><br />
+      </div>
+      <a href="/creative/dashboard">Back to Dashboard</a><br /><br />
+    </center>
+
+    <script>
+      let message = document.getElementById("message").value;
+      if (message.length < 1) applied.style.display = "block";
+      else applied.style.display = "none";
+    </script>
+  </body>
+</html>

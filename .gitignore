@@ -1,0 +1,5 @@
+gitignore
+.vscode
+.DS_Store
+firebaseServiceAccount.json
+node_modules/

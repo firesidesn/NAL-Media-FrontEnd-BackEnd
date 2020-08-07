@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <center>
+      <h3>Edit Your Profile</h3>
+      <a href="/profile/editPassword">Update Password</a></br><br />
+      <div>
+        <form action="/profile/edit" method="POST">
+          <strong>First Name:</strong><br />
+          <input type="text" name="firstName" value="<%= profile.firstName %>" /><br /><br />
+          <strong>Last Name:</strong><br />
+          <input type="text" name="lastName" value="<%= profile.lastName %>" /><br /><br />
+          <strong>Email:</strong><br />
+          <input type="text" name="email" value="<%= profile.email %>" /><br /><br />
+          <input type="submit" value="Edit Profile" />
+        </form>
+      </div>
+      <br />
+      <a href="/">Back to Dashboard</a>
+    </center>
+  </body>
+</html>

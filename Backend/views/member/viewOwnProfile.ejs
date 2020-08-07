@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Profile</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <center>
+      <h3>Your Profile</h3>
+      <br />
+      <div>
+        <strong>First Name:</strong><br />
+        <%= profile.firstName %><br /><br />
+        <strong>Last Name:</strong><br />
+        <%= profile.lastName %><br /><br />
+        <strong>Email:</strong><br />
+        <%= profile.email %><br /><br />
+        <a href="/profile/edit?id=<%=id%>">Edit Profile</a><br />
+      </div>
+      <br /><br />
+
+      <a href="/">Back to Dashboard</a><br /><br />
+    </center>
+  </body>
+</html>

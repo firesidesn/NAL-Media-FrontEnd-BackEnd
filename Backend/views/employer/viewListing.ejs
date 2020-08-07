@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employer Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <center>
+      <h3>Posted Jobs</h3>
+      <br />
+      <div>
+        <% jobs.forEach(record => {%>
+        <div>
+          <strong>Title:</strong><br />
+          <%= record.info.title %><br /><br />
+          <strong>Description:</strong><br />
+          <%= record.info.description %><br /><br />
+          <strong>Required Qualification:</strong><br />
+          <%= record.info.qualification %><br /><br />
+          <strong>Link to Apply:</strong><br />
+          <%= record.info.link %><br /><br />
+          <a href="/employer/viewApplicants?id=<%=record.id%>">View Applicants</a><br />
+          <a href="/employer/editJob?id=<%=record.id%>">Edit Listing</a><br />
+          <a href="/employer/deleteJob?id=<%=record.id%>">Remove Listing</a><br /><br />
+        </div>
+        <br /><br />
+        <% })%>
+      </div>
+      <a href="/employer/dashboard">Back to Dashboard</a><br /><br />
+    </center>
+  </body>
+</html>

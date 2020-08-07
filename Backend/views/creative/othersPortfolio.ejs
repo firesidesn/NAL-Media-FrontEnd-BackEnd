@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creative Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <center>
+      <h3>Portfolio</h3>
+      <br />
+      <div>
+        <% portfolios.forEach(record => {%>
+        <div>
+          <strong>Title:</strong><br />
+          <%= record.info.title %><br />
+          <strong>Description:</strong><br />
+          <%= record.info.description %><br />
+          <strong>Image:</strong><br />
+          <img src="<%= record.info.image %>" height="200" width="200" /><br />
+          <strong>Link:</strong><br />
+          <%= record.info.link %><br /><br />
+        </div>
+        <br /><br />
+        <% })%>
+      </div>
+      <a href="/">Back to Dashboard</a>
+    </center>
+  </body>
+</html>

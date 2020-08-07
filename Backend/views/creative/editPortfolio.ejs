@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creative Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <center>
+      <h1>Edit Portfolio</h1>
+      <br /><br />
+      <form action="/portfolio/edit" method="POST" enctype="multipart/form-data">
+        <label for="title">Title:</label>
+        <input type="text" name="title" placeholder="Title" value="<%=portfolio.title%>" /><br />
+        <label for="description">Description:</label>
+        <textarea name="description" placeholder="Description"><%=portfolio.description%></textarea><br />
+        <label for="image">Image:</label>
+        <input type="file" accept="image/*" name="image" id="image" required onchange="return fileValidation()" /><br />
+        <label for="url">Link:</label>
+        <input type="text" name="url" placeholder="Link" value="<%=portfolio.link%>" /><br />
+        <input type="hidden" name="id" value="<%=id%>" />
+        <input type="submit" value="Edit Portfolio" onclick="return fileValidation()" />
+      </form>
+      <br /><br />
+      <a href="/creative/dashboard">Back to Dashboard!</a>
+    </center>
+
+    <script>
+      fileValidation = () => {
+        const fi = document.getElementById("image");
+        // Check if any file is selected.
+        if (fi.files.length > 0) {
+          for (const i = 0; i <= fi.files.length - 1; i++) {
+            const fSize = fi.files.item(i).size;
+            const file = Math.round(fSize / 1024);
+            // The size of the file.
+            if (file >= 1025) {
+              alert("File too Big, Please select a file less than 1 MB");
+              return false;
+            } else return true;
+          }
+        }
+      };
+    </script>
+  </body>
+</html>

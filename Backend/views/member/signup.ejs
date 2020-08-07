@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NAL Media</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <center>
+      <div class="container">
+        <h2>Welcome To NAL Media</h2>
+        <h2>Sign Up!</h2>
+        <br />
+        <div class="form-group">
+          <form action="/signup" method="POST">
+            <div><input type="text" name="firstName" placeholder="First Name" /></div>
+            <br />
+            <div><input type="text" name="lastName" placeholder="Last Name" /></div>
+            <br />
+            <div><input type="email" name="email" placeholder="Email" /></div>
+            <br />
+            <div><input type="password" name="password" placeholder="Password" /></div>
+            <br />
+            <div>
+              <input type="radio" name="type" value="Employer" />
+              <label for="employee">Employer</label><br />
+              <input type="radio" name="type" value="Creative" />
+              <label for="creative">Creative</label><br />
+            </div>
+            <br />
+            <div><input type="submit" value="Sign up!" /></div>
+          </form>
+        </div>
+        Already Have an Account? <a href="/login">Log In!</a>
+      </div>
+    </center>
+  </body>
+</html>

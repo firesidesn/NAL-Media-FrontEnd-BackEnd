@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creative Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <center>
+      <h1>Creative Dashboard</h1>
+      <br /><%= message %><br /><br /><%= info %><br /><br /><br />
+      <div>
+        <a href="/creative/jobs">View Available Jobs</a>
+      </div>
+      <br /><br />
+      <div>
+        <a href="/creative/appliedJobs">View Applied Jobs</a>
+      </div>
+      <br /><br />
+      <div>
+        <a href="/portfolio?id=<%=id%>">Your Portfolio</a>
+      </div>
+      <br /><br />
+      <div>
+        <a href="/profile/feed"> Your Feed</a>
+      </div>
+      <br /><br />
+      <div>
+        <a href="/connection"> View Members</a>
+      </div>
+      <br /><br />
+      <div>
+        <a href="/connection/manage">Manage Connection</a>
+      </div>
+      <br /><br />
+      <div>
+        <a href="/message"> Messaging</a>
+      </div>
+      <br /><br />
+      <div>
+        <a href="/profile?id=<%=id%>">View Profile</a>
+      </div>
+      <br /><br />
+      <div>
+        <a href="/logout">Logout!</a>
+      </div>
+    </center>
+  </body>
+</html>

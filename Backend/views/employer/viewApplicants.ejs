@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employer Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <center>
+      <h3>Applicants</h3>
+      <br />
+      <div>
+        <% applicants.forEach(record => {%>
+        <div><%= record.info.creativeName %><br /></div>
+        <br /><br />
+        <% })%>
+      </div>
+      <a href="/employer/dashboard">Back to Dashboard</a><br /><br />
+    </center>
+  </body>
+</html>

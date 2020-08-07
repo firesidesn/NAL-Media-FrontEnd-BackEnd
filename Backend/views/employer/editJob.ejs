@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employer Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <center>
+      <h1><%=message%></h1>
+      <br /><br />
+      <form action="/employer/editJob" method="POST">
+        <label for="title">Title:</label>
+        <input type="text" name="title" placeholder="Title" value="<%=job.title%>" /><br />
+        <label for="description">Description:</label>
+        <textarea name="description" placeholder="Description"><%=job.description%></textarea><br />
+        <label for="qualification">Qualification:</label>
+        <textarea name="qualification" placeholder="Qualification"><%=job.qualification%></textarea><br />
+        <label for="url">Link To Apply:</label>
+        <input type="text" name="url" placeholder="Link to Apply" value="<%=job.link%>" /><br />
+        <input type="hidden" name="id" value="<%=id%>" />
+        <input type="submit" value="Edit Job" />
+      </form>
+      <br /><br />
+      <a href="/employer/dashboard">Back to Dashboard!</a>
+    </center>
+  </body>
+</html>

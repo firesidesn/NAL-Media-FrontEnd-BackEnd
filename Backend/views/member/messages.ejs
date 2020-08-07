@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Message Board</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <center>
+      <h3>Message History</h3>
+      <br />
+      <%=message%>
+      <div>
+        <% otherMembers.forEach(record => {%>
+        <div>
+          <strong>Name:</strong><br />
+          <%= record.name %>&nbsp;&nbsp;<a href="/message/chat?id=<%=record.id%>&mID=<%=id%>">Message</a><br /><br />
+        </div>
+        <% })%>
+      </div>
+      <br /><br /><a href="/">Back to Dashboard</a>
+    </center>
+  </body>
+</html>
